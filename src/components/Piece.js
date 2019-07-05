@@ -1,15 +1,15 @@
 import React from 'react';
-import {View, Image, TouchableHighlight} from 'react-native';
+import {View, Image, TouchableOpacity} from 'react-native';
 
 const Piece = (props) => {
     console.log('Here')
     return (
-        <TouchableHighlight onPress={() => {console.log('Hello Pressed')}}
+        <TouchableOpacity onPress={props.onPress}
         activeOpacity={1}>
             <Image 
                 source={props.image}
                 style={{height:props.height, width:props.height}}/>
-        </TouchableHighlight>
+        </TouchableOpacity>
 
     )
 }

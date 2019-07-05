@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux'
+import GameReducer from './GameReducer'
 
 export default combineReducers({
-    grid: () => [1,2,3]
+    grid: GameReducer
 })
