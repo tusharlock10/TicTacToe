@@ -1,1 +1,1 @@
-export const CHANGE_PLAYER="change_player";
+export const PLAYER_PLAYED="player_played";

@@ -1,10 +1,10 @@
 import {
-    CHANGE_PLAYER
+    PLAYER_PLAYED
 } from './types'
 
-export const changePlayerAction=()=>{
-    console.log('Hi dear')
+export const PlayedAction=(index)=>{
     return {
-        type:CHANGE_PLAYER
+        type:PLAYER_PLAYED,
+        payload: index
     }
 }
