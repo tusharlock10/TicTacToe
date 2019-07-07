@@ -93,12 +93,12 @@ class Grid extends Component{
     }
 
     infoText(){
-        if (this.state.fontLoaded){
-        return (
-            <Text style={styles.TextStyling}>
-                <Text>{this.props.player}</Text>
-            </Text>)
-        }
+        // if (this.state.fontLoaded){
+        // return (
+        //     <Text style={styles.TextStyling}>
+        //         <Text>{this.props.player}</Text>
+        //     </Text>)
+        // }
         return <View/>
     }
     
