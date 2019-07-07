@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Dimensions, Text} from 'react-native';
 import {connect} from 'react-redux'
+import * as Font from 'expo-font'
 import {
     PlayedAction,
     ClearGridAction,
@@ -14,6 +15,21 @@ import ThemeButton from './ThemeButton';
 
 
 class Grid extends Component{
+    constructor(){
+        super();
+        this.state={
+            fontLoaded: false
+        }
+    }
+
+    async componentDidMount(){
+        await Font.loadAsync({
+            'Gotham-Black':require('../../assets/fonts/Gotham-Black.ttf')
+        })
+
+        this.setState({fontLoaded:true})
+    }
+
 
     Play(index){
         
@@ -75,6 +91,16 @@ class Grid extends Component{
         this.props.ChangeThemeAction()
         
     }
+
+    infoText(){
+        if (this.state.fontLoaded){
+        return (
+            <Text style={styles.TextStyling}>
+                <Text>{this.props.player}</Text>
+            </Text>)
+        }
+        return <View/>
+    }
     
 
     renderGrid(){
@@ -85,7 +111,7 @@ class Grid extends Component{
 
             <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
                 <ThemeButton onPress={this.changeTheme.bind(this)} theme={this.props.theme} />
-                <Text style={styles.TextStyling}>Hello</Text>
+                {this.infoText()}
             </View>
 
             <View style={{flex:3.1}}>
