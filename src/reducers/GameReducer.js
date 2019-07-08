@@ -5,16 +5,16 @@ import { PLAYER_PLAYED, CLEAR_GRID } from "../actions/types";
 
 
 const BLANK_PIECE=0
-const O_PIECE=1, O2_PIECE =2
-const X_PIECE=3, X2_PIECE=4;
-const BLANK_PIECE_FADED=5
-const O_PIECE_FADED=6, O2_PIECE_FADED=7
-const X_PIECE_FADED=8, X2_PIECE_FADED=9;
+const O_PIECE=1, O2_PIECE =2, O3_PIECE =3;
+const X_PIECE=4, X2_PIECE=5, X3_PIECE=6;
+const BLANK_PIECE_FADED=7
+const O_PIECE_FADED=8, O2_PIECE_FADED =9, O3_PIECE_FADED =10;
+const X_PIECE_FADED=11, X2_PIEC_FADED=12, X3_PIECE_FADED=13;
 
-const O_PIECE_LIST = [1, 2]
-const X_PIECE_LIST = [3, 4]
+const O_PIECE_LIST = [O_PIECE, O2_PIECE, O3_PIECE]
+const X_PIECE_LIST = [X_PIECE, X2_PIECE, X3_PIECE]
 
-const FADED_ADDER = 5;
+const FADED_ADDER = 7;
 
 const INITIAL_STATE = {
   player: _.sample(['X', 'O']),
@@ -50,9 +50,9 @@ const update_gridState = (index, gridState, player) => {
   // Replace the BLANK_PIECE with the specific player's piece
   var new_piece, playable;
   if (player === "X") {
-    new_piece = _.sample([X_PIECE, X2_PIECE]);
+    new_piece = _.sample(O_PIECE_LIST);
   } else {
-    new_piece = _.sample([O_PIECE, O2_PIECE]);
+    new_piece = _.sample(X_PIECE_LIST);
   }
 
   if (gridState[index] === BLANK_PIECE){
