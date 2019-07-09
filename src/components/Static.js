@@ -41,6 +41,11 @@ const DARK_X_PIECE_FADED = require("../../assets/images/dark/x_faded.png");
 const DARK_X2_PIECE_FADED = require("../../assets/images/dark/x2_faded.png");
 const DARK_X3_PIECE_FADED = require("../../assets/images/dark/x3_faded.png");
 
+export const X_INFO_IMAGE = require('../../assets/images/light/X_INFO.png')
+export const O_INFO_IMAGE = require('../../assets/images/light/O_INFO.png')
+export const DARK_X_INFO_IMAGE = require('../../assets/images/dark/X_INFO.png')
+export const DARK_O_INFO_IMAGE = require('../../assets/images/dark/O_INFO.png')
+
 // Indexes :-
 // const BLANK_PIECE=0
 // const O_PIECE=1, O2_PIECE =2, O3_PIECE =3;

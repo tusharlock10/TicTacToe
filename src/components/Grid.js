@@ -1,16 +1,33 @@
 import React, {Component} from 'react';
-import {View, Dimensions, Text} from 'react-native';
-import {connect} from 'react-redux'
-import * as Font from 'expo-font'
 import {
     PlayedAction,
     ClearGridAction,
     ChangeThemeAction,
-    ChangeHeaderColorAction
+    ChangeHeaderColorAction,
+    
 } from '../actions'
+import {
+    View, 
+    Dimensions,
+    LayoutAnimation,
+    UIManager,
+    Platform,
+    Text,
+    Image
+} from 'react-native';
+import {connect} from 'react-redux'
+import * as Font from 'expo-font'
+
 import Piece from './Piece';
 import ClearButton from './ClearButton';
-import { DARK_THEME_IMAGES, LIGHT_THEME_IMAGES } from './Static'
+import { 
+    DARK_THEME_IMAGES, 
+    LIGHT_THEME_IMAGES, 
+    O_INFO_IMAGE, 
+    X_INFO_IMAGE,
+    DARK_O_INFO_IMAGE, 
+    DARK_X_INFO_IMAGE,
+ } from './Static'
 import ThemeButton from './ThemeButton';
 
 
@@ -20,6 +37,12 @@ class Grid extends Component{
         this.state={
             fontLoaded: false
         }
+
+        if (Platform.OS === 'android') {
+            (UIManager.setLayoutAnimationEnabledExperimental 
+            && 
+            UIManager.setLayoutAnimationEnabledExperimental(true));
+          }
     }
 
     async componentDidMount(){
@@ -29,6 +52,23 @@ class Grid extends Component{
 
         this.setState({fontLoaded:true})
     }
+
+    componentWillUpdate(){
+        const CustomLayoutSpring = {
+          duration: 750,
+          create: {
+            type: LayoutAnimation.Types.spring,
+            property: LayoutAnimation.Properties.scaleXY,
+            springDamping: 1,
+          },
+          update: {
+            type: LayoutAnimation.Types.spring,
+            springDamping: 1,
+          },
+        };
+    
+        LayoutAnimation.configureNext(CustomLayoutSpring);
+      }
 
 
     Play(index){
@@ -80,7 +120,7 @@ class Grid extends Component{
 
     renderClearButton(){
         if (this.props.won){
-            return <ClearButton onPress={this.clearGrid.bind(this)}/>
+            return <ClearButton onPress={this.clearGrid.bind(this)} theme={this.props.theme}/>
         }
         else{
             return <View/>
@@ -92,13 +132,35 @@ class Grid extends Component{
         
     }
 
+    getInfoImage(){
+        var source = X_INFO_IMAGE;
+        if (this.props.theme==='dark'){
+            source = DARK_X_INFO_IMAGE
+        }
+
+        if (this.props.player==='X'){
+            source = O_INFO_IMAGE
+            if (this.props.theme==='dark'){
+                source = DARK_O_INFO_IMAGE
+            }
+        }
+
+        return (
+            <Image source={source} style={{height:50, width:50}}/>
+        )
+
+    }
+
     infoText(){
-        // if (this.state.fontLoaded){
-        // return (
-        //     <Text style={styles.TextStyling}>
-        //         <Text>{this.props.player}</Text>
-        //     </Text>)
-        // }
+        if (this.state.fontLoaded){
+        return (
+            <View style={{flex:1, justifyContent:'space-between', alignItems:'center', flexDirection:'row'}}>
+                {this.getInfoImage()}
+                <Text style={styles.TextStyling}>
+                's Turn
+                </Text>
+            </View>)
+        }
         return <View/>
     }
     
@@ -109,9 +171,14 @@ class Grid extends Component{
         style={{justifyContent:'center', alignItems:'center', flex:1 ,
          backgroundColor:this.props.backgroundColor}}>
 
-            <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
-                <ThemeButton onPress={this.changeTheme.bind(this)} theme={this.props.theme} />
-                {this.infoText()}
+            <View style={{flex:1, justifyContent:'center', alignItems:'center', flexDirection:'row'}}>
+                <View style={{flex:1, alignItems:'center'}}>
+                    <ThemeButton onPress={this.changeTheme.bind(this)} theme={this.props.theme} />
+                </View>
+
+                <View style={{flex:1.5, alignItems:'center'}}>
+                    {this.infoText()}
+                </View>
             </View>
 
             <View style={{flex:3.1}}>
@@ -143,7 +210,7 @@ class Grid extends Component{
 
 const styles={
     TextStyling:{
-        fontSize:20,
+        fontSize:34,
         color:"rgb(255,0,0)",
         fontFamily:"Gotham-Black"
     }
