@@ -45,6 +45,12 @@ export const X_INFO_IMAGE = require('../../assets/images/light/X_INFO.png')
 export const O_INFO_IMAGE = require('../../assets/images/light/O_INFO.png')
 export const DARK_X_INFO_IMAGE = require('../../assets/images/dark/X_INFO.png')
 export const DARK_O_INFO_IMAGE = require('../../assets/images/dark/O_INFO.png')
+export const DRAW = require('../../assets/images/light/draw.png')
+export const DARK_DRAW = require('../../assets/images/dark/draw.png')
+
+
+export const LIGHT_COLOR = 'rgb(255,255,255)';
+export const DARK_COLOR = 'rgb(50,50,50)'
 
 // Indexes :-
 // const BLANK_PIECE=0

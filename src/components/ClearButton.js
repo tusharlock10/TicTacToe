@@ -1,8 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Image } from 'react-native';
+import {LIGHT_COLOR, DARK_COLOR} from './Static'
 
-const LIGHT_COLOR = 'rgb(255,255,255)';
-const DARK_COLOR = 'rgb(50,50,50)'
 
 const ClearButton = (props) => {
     var color=LIGHT_COLOR;

@@ -27,8 +27,12 @@ import {
     X_INFO_IMAGE,
     DARK_O_INFO_IMAGE, 
     DARK_X_INFO_IMAGE,
+    DARK_COLOR,
+    LIGHT_COLOR,
+    DRAW, DARK_DRAW
  } from './Static'
 import ThemeButton from './ThemeButton';
+
 
 
 class Grid extends Component{
@@ -129,10 +133,9 @@ class Grid extends Component{
 
     changeTheme(){
         this.props.ChangeThemeAction()
-        
     }
 
-    getInfoImage(){
+    getPlayerImage(){
         var source = X_INFO_IMAGE;
         if (this.props.theme==='dark'){
             source = DARK_X_INFO_IMAGE
@@ -142,6 +145,16 @@ class Grid extends Component{
             source = O_INFO_IMAGE
             if (this.props.theme==='dark'){
                 source = DARK_O_INFO_IMAGE
+                
+            }
+        }
+
+        if (this.props.won){
+            if (this.props.won ==='draw'){
+                source = DRAW
+                if (this.props.theme ==='dark'){
+                    source = DARK_DRAW
+                }
             }
         }
 
@@ -151,14 +164,41 @@ class Grid extends Component{
 
     }
 
-    infoText(){
+    getInfoText(){
+        var text = "NEXT";
+        var color = DARK_COLOR
+        var fontSize = 20;
+
+        if (this.props.won)
+            {
+                text = 'WON'
+                fontSize = 30
+
+                if (this.props.won === 'draw'){
+                    text = 'DRAW'
+                    fontSize = 34
+                    imageHidden = true;
+                }
+            }
+
+        if (this.props.theme==='dark'){
+            color = LIGHT_COLOR
+        }
+        return <Text style={[styles.TextStyling, {color:color, fontSize:fontSize}]}>{text}</Text>
+
+    }
+
+    info(){
         if (this.state.fontLoaded){
         return (
-            <View style={{flex:1, justifyContent:'space-between', alignItems:'center', flexDirection:'row'}}>
-                {this.getInfoImage()}
-                <Text style={styles.TextStyling}>
-                's Turn
-                </Text>
+            <View style={{
+                flex:1, 
+                justifyContent:'space-around', 
+                alignItems:'center', 
+                flexDirection:'row'}}>
+                {this.getPlayerImage()}
+
+                {this.getInfoText()}
             </View>)
         }
         return <View/>
@@ -177,7 +217,7 @@ class Grid extends Component{
                 </View>
 
                 <View style={{flex:1.5, alignItems:'center'}}>
-                    {this.infoText()}
+                    {this.info()}
                 </View>
             </View>
 
@@ -210,8 +250,6 @@ class Grid extends Component{
 
 const styles={
     TextStyling:{
-        fontSize:34,
-        color:"rgb(255,0,0)",
         fontFamily:"Gotham-Black"
     }
 }

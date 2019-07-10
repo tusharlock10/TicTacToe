@@ -1,8 +1,10 @@
 import { CHNAGE_THEME } from '../actions/types'
+import {
+    LIGHT_COLOR,
+    DARK_COLOR } from '../components/Static'
 
 
-const LIGHT_COLOR = 'rgb(255,255,255)';
-const DARK_COLOR = 'rgb(50,50,50)'
+
 
 const INITIAL_STATE = {
     theme: 'dark',
