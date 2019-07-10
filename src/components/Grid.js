@@ -13,6 +13,7 @@ import {
     UIManager,
     Platform,
     Text,
+    StatusBar,
     Image
 } from 'react-native';
 import {connect} from 'react-redux'
@@ -103,15 +104,15 @@ class Grid extends Component{
             alignItems:'center', flexDirection:'row'}}>
 
                 <Piece image={ this.getImage(gridState[indexList[0]]) }
-                height={110}
+                height={100}
                 onPress={this.Play.bind(this, indexList[0])}/>
 
                 <Piece image={ this.getImage(gridState[indexList[1]]) }
-                height={110}
+                height={100}
                 onPress={this.Play.bind(this, indexList[1])}/>
 
                 <Piece image={ this.getImage(gridState[indexList[2]]) }
-                height={110}
+                height={100}
                 onPress={this.Play.bind(this, indexList[2])}/>
 
             </View>
@@ -203,6 +204,13 @@ class Grid extends Component{
         }
         return <View/>
     }
+
+    getStatusBarColor(){
+        if (this.props.theme==='light'){
+            return <StatusBar backgroundColor={LIGHT_COLOR} barStyle='dark-content' />
+        }
+        return <StatusBar backgroundColor={DARK_COLOR} barStyle='light-content'/>
+    }
     
 
     renderGrid(){
@@ -236,11 +244,9 @@ class Grid extends Component{
     }
     render(){
         this.props.ChangeHeaderColorAction(this.props.theme)
-
-        
         return (
-        
             <View style={{flex:1}}>
+                {this.getStatusBarColor()}
                 {this.renderGrid()}
             </View>
         )

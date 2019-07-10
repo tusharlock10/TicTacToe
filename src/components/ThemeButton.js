@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Image } from 'react-native';
+import { TouchableOpacity, Image, StatusBar } from 'react-native';
 
 const SUN = require('../../assets/images/sun.png')
 const MOON = require('../../assets/images/moon.png')

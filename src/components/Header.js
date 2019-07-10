@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import { View, Text} from 'react-native';
 import {connect} from 'react-redux';
 import * as Font from 'expo-font'
-
-const LIGHT_COLOR = 'rgb(255,255,255)';
-const DARK_COLOR = 'rgb(50,50,50)'
+import {DARK_COLOR, LIGHT_COLOR} from './Static'
 
 
 class Header extends Component{
@@ -39,7 +37,6 @@ class Header extends Component{
                 </Text>
             )
         }
-
         return <View/>
     }
     
@@ -62,8 +59,7 @@ const styles={
 
     },
     TextStyling:{
-        top:10,
-        fontSize:36,
+        fontSize:42,
         fontFamily:'Gotham-Black',
     }
 }

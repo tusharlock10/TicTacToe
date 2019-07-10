@@ -1,5 +1,5 @@
 // Light Pieces for Dark theme
-const BLANK_PIECE = require("../../assets/images/light/blank.png");
+
 
 const O_PIECE = require("../../assets/images/light/o.png");
 const O2_PIECE = require("../../assets/images/light/o2.png");
@@ -21,7 +21,7 @@ const X3_PIECE_FADED = require("../../assets/images/light/x3_faded.png");
 
 
 // Dark Pieces for Light theme
-const DARK_BLANK_PIECE = require("../../assets/images/dark/blank.png");
+
 
 const DARK_O_PIECE = require("../../assets/images/dark/o.png");
 const DARK_O2_PIECE = require("../../assets/images/dark/o2.png");
@@ -40,6 +40,9 @@ const DARK_O3_PIECE_FADED = require("../../assets/images/dark/o3_faded.png");
 const DARK_X_PIECE_FADED = require("../../assets/images/dark/x_faded.png");
 const DARK_X2_PIECE_FADED = require("../../assets/images/dark/x2_faded.png");
 const DARK_X3_PIECE_FADED = require("../../assets/images/dark/x3_faded.png");
+
+export const BLANK_PIECE = require("../../assets/images/light/blank.png");
+export const DARK_BLANK_PIECE = require("../../assets/images/dark/blank.png");
 
 export const X_INFO_IMAGE = require('../../assets/images/light/X_INFO.png')
 export const O_INFO_IMAGE = require('../../assets/images/light/O_INFO.png')

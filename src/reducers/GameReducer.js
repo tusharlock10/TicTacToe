@@ -7,9 +7,6 @@ import { PLAYER_PLAYED, CLEAR_GRID } from "../actions/types";
 const BLANK_PIECE=0
 const O_PIECE=1, O2_PIECE =2, O3_PIECE =3;
 const X_PIECE=4, X2_PIECE=5, X3_PIECE=6;
-const BLANK_PIECE_FADED=7
-const O_PIECE_FADED=8, O2_PIECE_FADED =9, O3_PIECE_FADED =10;
-const X_PIECE_FADED=11, X2_PIEC_FADED=12, X3_PIECE_FADED=13;
 
 const O_PIECE_LIST = [O_PIECE, O2_PIECE, O3_PIECE]
 const X_PIECE_LIST = [X_PIECE, X2_PIECE, X3_PIECE]
@@ -167,7 +164,8 @@ export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case PLAYER_PLAYED:
         
-      var new_player = state.player, new_gridState = state.gridState, playable, won= state.won;
+      var new_player = state.player, new_gridState = state.gridState
+      var playable, won= state.won
 
       // Update the gridState with the player symbol
       if (!won){
