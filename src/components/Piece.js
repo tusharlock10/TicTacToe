@@ -1,6 +1,8 @@
 import React from 'react';
 import {Image, TouchableOpacity} from 'react-native';
 
+
+
 const Piece = (props) => {
     return (
         <TouchableOpacity onPress={props.onPress}

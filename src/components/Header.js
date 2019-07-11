@@ -54,9 +54,7 @@ const styles={
         width:null,
         height:80,
         justifyContent:'center',
-        alignItems:'center',
-        elevation:20,
-
+        alignItems:'center'
     },
     TextStyling:{
         fontSize:42,
