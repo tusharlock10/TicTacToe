@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, TouchableOpacity} from 'react-native';
+import {Image, TouchableOpacity} from 'react-native';
 
 const Piece = (props) => {
     return (
@@ -7,7 +7,7 @@ const Piece = (props) => {
         activeOpacity={1}>
             <Image 
                 source={props.image}
-                style={{height:props.height, width:props.height}}/>
+                style={{height:props.height, width:props.height, borderRadius:45}}/>
         </TouchableOpacity>
 
     )

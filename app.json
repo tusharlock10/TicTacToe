@@ -4,12 +4,19 @@
     "slug": "TicTacToe",
     "privacy": "public",
     "sdkVersion": "33.0.0",
+    "android": {
+      "package": "com.tjproductions.tictactoe"
+    },
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "1.0.0",
+    "primaryColor": "#FFFFFF",
+    "androidStatusBar": {
+      "backgroundColor": "#FFFF"
+    },
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
