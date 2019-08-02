@@ -1,0 +1,15 @@
+Title - Tic Tac Toe - A relaxing experience
+
+SD - Get some fun with this beautifully designed classic game of Tic Tac Toe
+
+LD - Get along with your friend and enjoy a game of Tic Tac Toe, in the shape of this beautifully carved app. ⭕❌
+
+With 4 different <font color="rgb(0, 194, 214)">bright</font> and <font color="rgb(244, 41, 12)">bold</font> colors for each piece, you the game will feel like new, evey-time you play it. 
+
+Also, the addition of dark mode means that you can have non-stop fun, whether its day or night. Cool animations, classic game play and no ads, means that you can just download and play <i>whenever</i> you want without any disturbance.
+
+<b>**NOTE**</b>
+This is an open source app, with the github link - 
+https://github.com/tusharlock10/TicTacToe
+
+Please feel free to make contribution in this app. Made using React Native.
