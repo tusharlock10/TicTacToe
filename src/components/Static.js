@@ -44,24 +44,30 @@ const DARK_X3_PIECE_FADED = require("../../assets/images/dark/x3_faded.png");
 export const BLANK_PIECE = require("../../assets/images/light/blank.png");
 export const DARK_BLANK_PIECE = require("../../assets/images/dark/blank.png");
 
-export const X_INFO_IMAGE = require('../../assets/images/light/X_INFO.png')
-export const O_INFO_IMAGE = require('../../assets/images/light/O_INFO.png')
-export const DARK_X_INFO_IMAGE = require('../../assets/images/dark/X_INFO.png')
-export const DARK_O_INFO_IMAGE = require('../../assets/images/dark/O_INFO.png')
-export const DRAW = require('../../assets/images/light/draw.png')
-export const DARK_DRAW = require('../../assets/images/dark/draw.png')
+export const X_INFO_IMAGE = require('../../assets/images/light/X_INFO.png');
+export const O_INFO_IMAGE = require('../../assets/images/light/O_INFO.png');
+export const DARK_X_INFO_IMAGE = require('../../assets/images/dark/X_INFO.png');
+export const DARK_O_INFO_IMAGE = require('../../assets/images/dark/O_INFO.png');
+export const DRAW = require('../../assets/images/light/draw.png');
+export const DARK_DRAW = require('../../assets/images/dark/draw.png');
+
+export const CROSS_BUTTON = require('../../assets/images/ResetCross.png')
+
+export const SHARE_LIGHT = require('../../assets/images/light/share.png');
+export const SHARE_DARK = require('../../assets/images/dark/share.png');
+export const RATING_IMAGE = require('../../assets/images/Rating.png');
+
+export const LIGHT_COLOR = 'rgb(250,250,250)';
+export const DARK_COLOR = 'rgb(50,50,62)';
+export const DARK_COLOR_ICONS = 'rgb(75, 75, 75)';
+export const DARK_COLOR_HEADER_TEXT = '#3c3c4b';
+export const LIGHT_COLOR_HEADER_TEXT = '#ffffff';
+
+export const BOLD_BLUE = 'rgb(0, 194, 214)';
+export const BOLD_RED = 'rgb(234, 52, 87)';
+export const BOLD_GREEN = '#5CDB95'//'rgb(112, 48, 160)';
 
 
-export const LIGHT_COLOR = 'rgb(255,255,255)';
-export const DARK_COLOR = 'rgb(50,50,50)'
-
-// Indexes :-
-// const BLANK_PIECE=0
-// const O_PIECE=1, O2_PIECE =2, O3_PIECE =3;
-// const X_PIECE=4, X2_PIECE=5, X3_PIECE=6;
-// const BLANK_PIECE_FADED=7
-// const O_PIECE_FADED=8, O2_PIECE_FADED =9, O3_PIECE_FADED =10;
-// const X_PIECE_FADED=11, X2_PIEC_FADED=12, X3_PIECE_FADED=13;
 
 export const DARK_THEME_IMAGES = [
     BLANK_PIECE,
@@ -70,7 +76,7 @@ export const DARK_THEME_IMAGES = [
     BLANK_PIECE_FADED,
     O_PIECE_FADED, O2_PIECE_FADED, O3_PIECE_FADED,
     X_PIECE_FADED, X2_PIECE_FADED, X3_PIECE_FADED
-]
+];
 
 export const LIGHT_THEME_IMAGES = [
     DARK_BLANK_PIECE,
@@ -79,4 +85,4 @@ export const LIGHT_THEME_IMAGES = [
     DARK_BLANK_PIECE_FADED,
     DARK_O_PIECE_FADED, DARK_O2_PIECE_FADED, DARK_O3_PIECE_FADED,
     DARK_X_PIECE_FADED, DARK_X2_PIECE_FADED, DARK_X3_PIECE_FADED
-]
+];

@@ -1,50 +1,82 @@
 import React, {Component} from 'react';
 import { View, Text} from 'react-native';
 import {connect} from 'react-redux';
-import * as Font from 'expo-font'
-import {DARK_COLOR, LIGHT_COLOR} from './Static'
+// import * as Font from 'expo-font'
+import ShadowView from 'react-native-simple-shadow-view'
+import {
+    DARK_COLOR, 
+    LIGHT_COLOR, 
+    BOLD_BLUE,
+    BOLD_RED,
+    BOLD_GREEN,
+    DARK_COLOR_HEADER_TEXT,
+    LIGHT_COLOR_HEADER_TEXT
+} from './Static'
 
 
 class Header extends Component{
     constructor(){
+
         super();
-        this.state={
-            fontLoaded: false
-        }
+        // this.state={
+        //     fontLoaded: false
+        // }
     }
 
-    async componentDidMount(){
-        await Font.loadAsync({
-            'Gotham-Black':require('../../assets/fonts/Gotham-Black.ttf')
-        })
+    // async componentDidMount(){
+    //     await Font.loadAsync({
+    //         'Gotham-Black':require('../../assets/fonts/Gotham-Black.ttf')
+    //     })
 
-        this.setState({fontLoaded:true})
-    }
+    //     this.setState({fontLoaded:true})
+    // }
 
     getColors(){
         if (this.props.theme==='dark'){
-            return {textColor:LIGHT_COLOR, color:DARK_COLOR}
+            return {
+                textColor:[LIGHT_COLOR, LIGHT_COLOR, LIGHT_COLOR],
+                headerColor:DARK_COLOR,
+                color:DARK_COLOR_HEADER_TEXT,
+            }
         }
-        return {textColor:DARK_COLOR, color:LIGHT_COLOR}
+        return {
+            textColor:[BOLD_BLUE, BOLD_RED, BOLD_GREEN], 
+            headerColor:LIGHT_COLOR,
+            color:LIGHT_COLOR_HEADER_TEXT,
+        }
     }
     
-    getText(textColor){
-        if (this.state.fontLoaded){
+    getText(colorObj){
+        // if (this.state.fontLoaded){
+        const {textColor, color} = colorObj;
+
             
-            return (
-                <Text style={[styles.TextStyling, {color:textColor}]}>
-                    TIC TAC TOE
+        return (
+            <ShadowView style={{
+                shadowOpacity: 0.35,
+                shadowRadius:4,
+                shadowOffset: { width: 0, height: 3},
+                backgroundColor: color,
+                paddingVertical:5,
+                paddingHorizontal:20,
+                borderRadius:10
+            }}>
+                <Text style={styles.TextStyling}>
+                    <Text style={{color:textColor[0]}}>{'TIC '}</Text>
+                    <Text style={{color:textColor[1]}}>{'TAC '}</Text>
+                    <Text style={{color:textColor[2]}}>{'TOE'}</Text>
                 </Text>
-            )
-        }
-        return <View/>
+            </ShadowView>
+        )
+        // }
+        // return <View/>
     }
     
     render(){
-        const {textColor, color} = this.getColors()
+        const colorObj = this.getColors()
         return (
-        <View style={[styles.HeaderStyling, {backgroundColor:color}]}>
-            {this.getText(textColor)}
+        <View style={[styles.HeaderStyling, {backgroundColor:colorObj.headerColor}]}>
+            {this.getText(colorObj)}
         </View>
     )}
 }

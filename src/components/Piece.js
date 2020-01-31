@@ -1,18 +1,18 @@
 import React from 'react';
-import {Image, TouchableOpacity} from 'react-native';
-
-
+import {TouchableOpacity} from 'react-native';
+import Image from 'react-native-fast-image';
+// import { NoFlickerImage } from 'react-native-no-flicker-image';
 
 const Piece = (props) => {
     return (
-        <TouchableOpacity onPress={props.onPress}
+
+        <TouchableOpacity onPress={props.onPress} 
         activeOpacity={1}>
             <Image 
                 source={props.image}
-                style={{height:props.height, width:props.height, borderRadius:45}}/>
+                style={[{height:props.height, width:props.height}, {borderRadius: props.borderRadius}]}/>
         </TouchableOpacity>
-
-    )
+    );
 }
 
 export default Piece;

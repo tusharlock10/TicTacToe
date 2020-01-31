@@ -45,7 +45,7 @@ const change_player = player => {
 
 const update_gridState = (index, gridState, player) => {
   // Replace the BLANK_PIECE with the specific player's piece
-  var new_piece, playable;
+  let new_piece, playable;
   if (player === "X") {
     new_piece = _.sample(O_PIECE_LIST);
   } else {
@@ -75,8 +75,8 @@ const update_gridState = (index, gridState, player) => {
 };
 
 const convert_to_faded =(gridState, combo) => {
-  var new_gridState = [], new_piece;
-  gridState.forEach(
+  let new_gridState = [], new_piece;
+  gridState.map(
     (piece, index) => {
       if (combo.includes(index)){
         new_piece = piece
@@ -98,7 +98,7 @@ const check_draw =(gridState) => {
   won = 'draw'
   // returns 'draw' if no BLANK_PIECES are left
 
-  gridState.forEach(
+  gridState.map(
     (piece) => {
       if (piece == BLANK_PIECE){
         won = false
@@ -109,8 +109,8 @@ const check_draw =(gridState) => {
 }
 
 const checker_helper=(gridState_index, piece_list)=>{
-  var check = false;
-  piece_list.forEach(
+  let check = false;
+  piece_list.map(
     (piece) => {
       if (gridState_index===piece){
         check = true
@@ -122,8 +122,8 @@ const checker_helper=(gridState_index, piece_list)=>{
 }
 
 const check_win=(gridState, piece)=>{
-  var won = false;
-  var piece_list;
+  let won = false;
+  let piece_list;
   if (O_PIECE_LIST.includes(piece)){
     piece_list= O_PIECE_LIST
   }
@@ -131,7 +131,7 @@ const check_win=(gridState, piece)=>{
     piece_list = X_PIECE_LIST
   }
 
-  WINNING_COMBOS.forEach(
+  WINNING_COMBOS.map(
     (combo) => {
 
       index1 = combo[0]
@@ -164,8 +164,8 @@ export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case PLAYER_PLAYED:
         
-      var new_player = state.player, new_gridState = state.gridState
-      var playable, won= state.won
+      let new_player = state.player, new_gridState = state.gridState
+      let playable, won= state.won
 
       // Update the gridState with the player symbol
       if (!won){

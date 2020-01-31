@@ -1,24 +1,26 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "^33.0.0",
     "lodash": "^4.17.11",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
-    "react-native-web": "^0.11.4",
+    "react": "16.9.0",
+    "react-native": "0.61.5",
+    "react-native-fast-image": "^7.0.2",
+    "react-native-simple-shadow-view": "^1.6.3",
     "react-redux": "^7.1.0",
     "redux": "^4.0.1"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.1.1"
   },
-  "private": true
+  "private": true,
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
+  }
 }
