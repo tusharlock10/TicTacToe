@@ -1,11 +1,9 @@
 import React from 'react';
 import { TouchableOpacity} from 'react-native';
 import Image from 'react-native-fast-image';
-// import { NoFlickerImage } from 'react-native-no-flicker-image';
 
 const SUN = require('../../assets/images/sun.png')
 const MOON = require('../../assets/images/moon.png')
-
 
 const getImage = (theme) => {
     if (theme==='light'){

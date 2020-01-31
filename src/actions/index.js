@@ -1,7 +1,7 @@
 import {
     PLAYER_PLAYED,
     CLEAR_GRID,
-    CHNAGE_THEME,
+    CHANGE_THEME,
     CHANGE_HEADER_COLOR
 } from './types'
 
@@ -20,7 +20,7 @@ export const ClearGridAction = () =>{
 
 export const ChangeThemeAction = () =>{
     return {
-        type:CHNAGE_THEME
+        type:CHANGE_THEME
     }
 }
 
