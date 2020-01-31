@@ -57,14 +57,14 @@ export const SHARE_LIGHT = require('../../assets/images/light/share.png');
 export const SHARE_DARK = require('../../assets/images/dark/share.png');
 export const RATING_IMAGE = require('../../assets/images/Rating.png');
 
-export const LIGHT_COLOR = 'rgb(250,250,250)';
-export const DARK_COLOR = 'rgb(50,50,62)';
-export const DARK_COLOR_ICONS = 'rgb(75, 75, 75)';
+export const LIGHT_COLOR = '#fafafa';
+export const DARK_COLOR = '#32323e';
+export const DARK_COLOR_ICONS = '#4b4b4b';
 export const DARK_COLOR_HEADER_TEXT = '#3c3c4b';
 export const LIGHT_COLOR_HEADER_TEXT = '#ffffff';
 
-export const BOLD_BLUE = 'rgb(0, 194, 214)';
-export const BOLD_RED = 'rgb(234, 52, 87)';
+export const BOLD_BLUE = '#00c2d6';
+export const BOLD_RED = '#ea3457';
 export const BOLD_GREEN = '#5CDB95'//'rgb(112, 48, 160)';
 
 
