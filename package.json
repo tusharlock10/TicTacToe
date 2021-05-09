@@ -6,7 +6,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-fast-image": "^7.0.2",
